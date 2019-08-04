@@ -64,6 +64,9 @@
             arr.forEach(el => {
                 menu.style.display = 'block'
                 var oli = document.createElement('li')
+                oli.onclick = function(){
+                    window.location.href = 'https://www.baidu.com/s?wd='+el.q
+                }
                 oli.innerHTML = el.q
                 menu.appendChild(oli)
             });
