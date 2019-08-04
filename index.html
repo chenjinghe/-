@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>百度一下-陈镜合</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        img,input{
+        display: block;
+        margin: 0 auto;
+        }
+        #text{
+            width: 540px;
+            height: 40px;
+
+        }
+        #logo{
+            margin-top: 150px;
+        }
+        #menu{
+            list-style: none;
+            display: none;
+            width: 542px;
+            margin: 0  auto;
+            border: 1px solid #333;
+            border-top: 0;
+        }
+        #menu li{
+            line-height: 30px;
+            text-indent: 10px
+        }
+        #menu li:hover{
+            background: #333;
+        }
+    </style>
+</head>
+<body>
+     <img src="01.png" alt="" id='logo'>
+     <input type="text" id="text" onkeyup="change(this)">
+     <ul id="menu">
+            <li>我的心情很好</li>
+     </ul>
+</body>
+</html>
+<script>
+        function change(data){
+           var value  = data.value
+           var script = document.createElement('script')
+           script.src = 'https://www.baidu.com/sugrec?pre=1&p=3&ie=utf-8&json=1&prod=pc&from=pc_web&sugsid=1460,21111,18559,29522,29521,29098,29567,28835,29221,26350,29459&wd='+value+'&cb=chenjinghe'
+           document.body.appendChild(script)
+        }
+        function chenjinghe(date){
+            let arr = date.g
+            menu.innerHTML = ''
+      if(arr.length  ===0){
+          menu.style.display = 'none'
+          return
+      }
+            arr.forEach(el => {
+                menu.style.display = 'block'
+                var oli = document.createElement('li')
+                oli.innerHTML = el.q
+                menu.appendChild(oli)
+            });
+        }
+</script>
