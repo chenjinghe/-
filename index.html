@@ -57,9 +57,9 @@
         function chenjinghe(date){
             let arr = date.g
             menu.innerHTML = ''
-      if(arr.length  ===0){
+      if(date.length  ===0){
           menu.style.display = 'none'
-          return
+          return;
       }
             arr.forEach(el => {
                 menu.style.display = 'block'
